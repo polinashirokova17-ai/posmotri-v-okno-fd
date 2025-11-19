@@ -35,7 +35,7 @@ html {
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: end;
   gap: 30px;
   min-width: 1140px;
   min-height: 534px;
@@ -45,7 +45,6 @@ html {
 .result {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   width: 711px;
   height: 456px;
 
@@ -53,30 +52,228 @@ html {
 
 .result__video {
   width: 100%;
+  height: 384px;
+  object-fit: cover;
+}
+
+.search-form__fieldset-title {
+  margin-bottom: 5px;
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 100%;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__textfield {
+  min-width: 225px;
+  border: none;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  background: transparent;
+}
+
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Стилизация псевдочекбокса */
+.search-form__pseudo-checkbox {
+  position: relative;
+  width: 19px;
+  height: 19px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  padding: 1px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: #fff;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__label:has(.search-form__textfield):hover .search-form__label-text {
+  text-decoration: none;
+}
+
+/* Фокус для чекбоксов */
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Фокус для текстового поля */
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  min-width: 194px;
+  min-height: 34px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  font-family: Fira Sans Condensed;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  background: transparent;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background: rgba(84, 80, 80, 1);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 
 .content__details {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   gap: 26px;
   width: 399px;
   height: 534px;
+  
 }
+
+.title {
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
 
 .search-form {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 40px;
+  min-height: 54px;
 }
 
 .content__list-container {
-    display: flex;
-    flex-direction: column;
-    height: 534px;
-    overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 298px;
+  overflow-y: auto;
 }
+
+.content__card-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  
+}
+
+.content__video-card-title {
+  max-width: 200px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+}
+
+.content__video-card-description {
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16.2px;
+
+}
+
+.content__video-card-description-container {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  margin-bottom: 30px;
+  object-fit: cover;
+  object-position: center;
+}
+
 
 
 /* Кастомный скроллбар */
