@@ -15,37 +15,40 @@ ol {
 }
 
 html {
-  min-height: 100%;
+  block-size: 100%;
 }
 
 .page {
   display: flex;
   justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  align-items: flex-start;
+  margin: auto;
   padding: 133px 30px;
   color: #fff;
-  font-family: 'Fira Sans Condensed', Arial, sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  align-items: center;
+  align-items: end;
   gap: 30px;
-  max-width: 1140px;
+  min-width: 1140px;
+  min-height: 534px;
+  
 }
 
 .result {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 711px;
-  margin: 78px 0 0;
+  gap: 12px;
+  width: 711px;
+  height: 456px;
+
 }
 
 .result__video {
@@ -55,7 +58,8 @@ html {
 }
 
 .search-form__fieldset-title {
-  margin-bottom: 6px;
+  margin-bottom: 5px;
+  font-family: Fira Sans Condensed;
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
@@ -85,10 +89,11 @@ html {
   border-top: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
   color: rgba(255, 255, 255, 0.7);
+  font-family: Fira Sans Condensed;
   font-size: 18px;
   background: transparent;
-  appearance: none;
 }
+
 
 .visually-hidden {
   position: absolute;
@@ -149,6 +154,7 @@ html {
 .button {
   border: 1px solid rgba(255, 255, 255, 1);
   color: rgba(255, 255, 255, 1);
+  font-family: Fira Sans Condensed;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
@@ -167,6 +173,7 @@ html {
   min-height: 34px;
 }
 
+
 .button:hover {
   text-decoration: underline;
 }
@@ -184,19 +191,22 @@ html {
   outline-offset: 1px;
 }
 
+
 .content__details {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 26px;
-  max-width: 399px;
+  gap: 20px;
+  width: 399px;
+  height: 534px;
+  
 }
 
 .title {
-  font-family: 'Oswald','Arial Narrow', sans-serif;
+  font-family: Oswald;
   font-weight: 700;
   font-size: 75px;
-  line-height: 0.94;
+  line-height: 94%;
   text-transform: uppercase;
 }
 
@@ -204,24 +214,20 @@ html {
   color: #545050;
 }
 
+
 .search-form {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 40px;
+  min-height: 54px;
 }
 
 .result__video-container {
   position: relative;
-  width: 100%;
-  height: 386px;
 }
 
 .content__list-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
   height: 295px;
   overflow-y: auto;
 }
@@ -230,10 +236,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
 
-.content__list-item {
-  margin: 0 2px;
 }
 
 .content__card-link {
@@ -241,10 +244,6 @@ html {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
-}
-
-.content__card-link_current {
-  background: #545050; 
 }
 
 .content__card-link:active {
@@ -268,30 +267,29 @@ html {
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  
 }
 
 .content__video-card-title {
   max-width: 200px;
   margin-bottom: 6px;
   overflow: hidden;
-  font-family: 'Oswald','Arial Narrow', sans-serif;
+  font-family: Oswald;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
+  
 }
 
 .content__video-card-description {
-  display: -webkit-box;
-  max-height: 65px;
-  overflow: hidden;
+  font-family: Fira Sans Condensed;
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2px;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+
 }
 
 .content__video-card-description-container {
@@ -303,10 +301,14 @@ html {
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
+  margin: 0px 3px;
   object-fit: cover;
   object-position: center;
 }
 
+
+
+/* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
